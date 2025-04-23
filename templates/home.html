@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AcmeCorp Portal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #121212;
+            color: #e0e0e0;
+        }
+
+        nav {
+            background-color: #1f1f1f;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav .nav-links a {
+            color: #bbb;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        nav .nav-links a:hover {
+            color: white;
+        }
+
+        .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(to right, #1a1a1a, #222);
+    text-align: center;
+    padding: 80px 20px 0; /* Top padding added */
+}
+
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: -1px;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            color: #aaa;
+            margin-bottom:-1px;
+        }
+
+        .hero a.button {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .hero a.button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">AcmeCorp</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Welcome to AcmeCorp Portal</h1>
+        <p>
+            The secure and powerful platform for internal operations, employee access, and secure resource management.
+        </p>
+        <a class="button" href="/login">Login to Portal</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Result | AcmeCorp</title>
+    <style>
+        body {
+            background-color: #121212;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .result-box {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .result-box h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .result-box p {
+            font-size: 16px;
+            color: #aaa;
+        }
+
+        .success {
+            color: #00c853;
+        }
+
+        .failure {
+            color: #ff5252;
+        }
+
+        .flag {
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 18px;
+            color: #00ff99;
+            background: #1a1a1a;
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .back-btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-box">
+        <h2 class="{{ 'success' if success else 'failure' }}">
+            {{ 'Login Successful!' if success else 'Login Failed!' }}
+        </h2>
+        <p>{{ message }}</p>
+
+        {% if success and flag %}
+            <div class="flag">
+                🎉 Your flag: <code>{{ flag }}</code>
+            </div>
+        {% elif not success %}
+            <a href="/login" class="back-btn">Try Again</a>
+        {% endif %}
+    </div>
+</body>
+</html>

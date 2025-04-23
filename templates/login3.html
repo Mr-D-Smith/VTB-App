@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - AcmeCorp Portal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #121212;
+            color: #e0e0e0;
+        }
+
+        nav {
+            background-color: #1f1f1f;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav .nav-links a {
+            color: #bbb;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        nav .nav-links a:hover {
+            color: white;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: #1e1e1e;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            font-size: 14px;
+            background-color: #2a2a2a;
+            color: #fff;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #55595c;
+            box-shadow: 0 0 5px rgba(66, 67, 68, 0.5); 
+        }
+
+        input::placeholder {
+            color: #999;
+        }
+
+        .btn {
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">AcmeCorp</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+        </div>
+    </nav>
+
+    <div class="login-container">
+        <h2>Login to Portal</h2>
+
+        {% if form.errors %}
+            <div class="error-message">Invalid username or password</div>
+        {% endif %}
+
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.username(size=30, placeholder='Username') }}
+            {{ form.password(size=30, placeholder='Password') }}
+            {{ form.submit(class_='btn') }}
+        </form>
+    </div>
+
+</body>
+</html>
