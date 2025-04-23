@@ -56,4 +56,4 @@ conn.commit()
 conn.close()
 
 print("Databse Created.")
-print(f"Task: get yourself logged in as {username} {password}")
+print(f"Task: get yourself logged in as {username}")
